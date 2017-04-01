@@ -1,0 +1,20 @@
+@import 'susy';
+
+.wrap {
+    @include container(960px);
+}
+
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'OpenSans_Regular', Arial, sans-serif;
+    font-size: 100%;
+    line-height: 1.4;
+    background-color: #62808b;
+}
