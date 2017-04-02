@@ -1,8 +1,23 @@
-@mixin block {
+%block {
     border-top: 1px #9DB8C9 solid;
     box-shadow: 0 0 1px black;
     background-color: #7D9DB4;
 }
+
+%white_link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+%blue_link {
+    color: #5c626b;
+    text-transform: none;
+    font-size: 14px;
+    &:hover { color: #52b8df };
+}
+
 
 @font-face {
     font-family: 'Roboto_Bold';
@@ -35,19 +50,34 @@ body {
 }
 
 .list-inline {
-    @include block;
+    @extend %block;
+
     padding: 0;
     li {
-        &:hover{
+        &:hover{ 
             cursor: pointer;
-        }
+            background-color: #7797AF;
+        };
         padding: 25px;
         border-right: 1px #748E9C solid;
-        a {
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 14px;
-            text-decoration: none;
-        }
+        a { @extend %white_link };
+    }
+}
+
+.drop-down {
+    background-color: #fff;
+    top: 90px;
+    position: absolute;
+    margin-left: -25px;
+
+    li {
+        // kostil, on hover parent, here too :(
+        &:hover{ background-color: #fff };
+        display: block;
+        width: 200px;
+        padding: 7px 30px;
+        &:last-child { padding-bottom: 45px }
+        &:first-child { padding-top: 45px }
+        a { @extend %blue_link }
     }
 }
