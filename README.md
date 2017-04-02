@@ -1,5 +1,12 @@
 # sass
 URL - https://avis20.github.io/sass/   
+Автокомпиляция sass -> css - 
+
+```
+#!bash
+sass --watch sass/main.scss:css/main.css --style compressed
+```
+
 ~~~Пример верстки на sass, с сеткой susy~~~  
 ~~~Установил susy просто скачав исходники:~~~
 - Manual Start  
