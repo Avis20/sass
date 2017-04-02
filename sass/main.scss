@@ -1,3 +1,9 @@
+@mixin block {
+    border-top: 1px #9DB8C9 solid;
+    box-shadow: 0 0 1px black;
+    background-color: #7D9DB4;
+}
+
 @font-face {
     font-family: 'Roboto_Bold';
     src: url(../fonts/Roboto-Bold.ttf);
@@ -8,18 +14,40 @@
 @font-face {
     font-family: 'Roboto_Regular';
     src: url(../fonts/Roboto-Regular.ttf);
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-}
-
-.test {
-    font-family: 'Roboto_Regular';
 }
 
 html,
 body {
+    background-color: #7296AE;
     height: 100%;
     font-family: 'Roboto_Regular', Arial, sans-serif;
     font-size: 100%;
     line-height: 1.4;
+}
+
+.logo {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap; flex-wrap: wrap;
+    justify-content: center;
+}
+
+.list-inline {
+    @include block;
+    padding: 0;
+    li {
+        &:hover{
+            cursor: pointer;
+        }
+        padding: 25px;
+        border-right: 1px #748E9C solid;
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    }
 }
